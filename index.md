@@ -5,7 +5,7 @@ a creare delle strutture sociali virtuali di Bears anonimi.
 
 ### Perchè tutto ciò
 
-```
+
 Voglio creare una struttura composta di piccole **tribù di Bears** in cui le persone possano esprimersi liberalmente e democraticamente grazie anche all'anonimato. 
 
 Ogni tribù di Bears verrà formata in modo da creare **gruppi eterogenei** che avranno **potere decisionale sull'andamento dell'intero progetto**, da ogni suo punto di vista, dai dati forniti dalle analisi, a che strumenti di supporto e/o informazione dare alla comunità di Bears.
@@ -16,4 +16,4 @@ Con il progetto Bear voglio inoltre portare la comunità ad un **confronto apert
 
 [Dati](https://alexanderis1.github.io/progettobear/graph.html)
 
-```
+<div id="text"></div>
