@@ -1,7 +1,3 @@
-## Progetto Bear
-
-Nato dal progetto **Puppuservice.it**
-
 ### Obbiettivo
 
 Il Progetto Bear mira, parallelamente ad offrire **dati più strutturati sulla pandemia** in corso,
