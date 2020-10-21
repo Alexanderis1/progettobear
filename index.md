@@ -16,4 +16,14 @@ Con il progetto Bear voglio inoltre portare la comunità ad un **confronto apert
 
 [Dati](https://alexanderis1.github.io/progettobear/graph.html)
 
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+$().ready(function(){
+    $.getJSON( "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json", function( data ) {
+    console.log(data);
+    $("#text").html(data[10]);
+  });
+});
+</script>
+
 <div id="text"></div>
