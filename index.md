@@ -1,37 +1,21 @@
-## Welcome to GitHub Pages
+## Progetto Bear
 
-You can use the [editor on GitHub](https://github.com/Alexanderis1/progettobear/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Nato dal progetto **Puppuservice.it**
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Obbiettivo
 
-### Markdown
+Il Progetto Bear mira, parallelamente ad offrire **dati più strutturati sulla pandemia** in corso,
+a creare delle strutture sociali virtuali di Bears anonimi.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+```Perchè tutto ciò
 
-```markdown
-Syntax highlighted code block
+Voglio creare una struttura composta di piccole tribù in cui le persone possano esprimersi liberalmente e democraticamente grazie anche all'anonimato. 
 
-# Header 1
-## Header 2
-### Header 3
+Ogni tribù di Bears verrà formata in modo da creare gruppi eterogenei che avranno potere decisionale sull'andamento dell'intero progetto, da ogni suo punto di vista, dai dati forniti dalle analisi, a che strumenti di supporto e/o informazione dare alla comunità di Bears.
 
-- Bulleted
-- List
+In questo periodo è frustrante non capire cosa potrebbe succedere, cosa pensa il nostro vicino di casa, cosa è giusto e cosa è sbagliato.
 
-1. Numbered
-2. List
+Con il progetto Bear voglio inoltre portare la comunità ad un confronto aperto che possa guidare ad una linea di pensiero abbracciata dalla maggioranza dei Bears e che li fortifichi della vita reale.
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](graph.html) and ![Image](src)
+[Dati](https://alexanderis1.github.io/progettobear/graph.html)
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Alexanderis1/progettobear/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
