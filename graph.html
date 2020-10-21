@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
+
+<title>Puppu Service</title>
+
+<body>
+<div id="dati"></div>
+<p> Prova </p>
+</body>
+
 <script>
 
 
@@ -28,17 +36,8 @@ function getJSONP(url, success) {
 getJSONP('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json', function(data){
     console.log(data[0]);
 
-    document.getElementById("dati").innerHTML = data[0]
+    document.getElementById("dati").innerHTML = data[0];
 
     });
 
-</script>
-
-
-<title>Puppu Service</title>
-
-<body>
-<div id="dati"></div>
-<p> Prova </p>
-</body>
-</html>
+</script></html>
