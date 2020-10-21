@@ -6,12 +6,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <script>
-$().ready(function(){
-    $.getJSON( "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json", function( data ) {
-    console.log(data);
-    $("#text").html(data[10]);
-  });
-});
+
 
 function getJSONP(url, success) {
 
@@ -31,8 +26,11 @@ function getJSONP(url, success) {
 }
 
 getJSONP('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json', function(data){
-    console.log(data);
-});
+    console.log(data[0]);
+
+    document.getElementById("dati").innerHTML = data[0]
+
+    });
 
 </script>
 
@@ -40,7 +38,7 @@ getJSONP('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dp
 <title>Puppu Service</title>
 
 <body>
-<div id="text"></div>
+<div id="dati"></div>
 <p> Prova </p>
 </body>
 </html>
