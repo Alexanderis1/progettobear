@@ -14,18 +14,18 @@
 </body>
 
 <script>
-    
-    var invocation = new XMLHttpRequest();
-    var url = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json';
-   
-    function callOtherDomain() {
-        if(invocation) {    
-            invocation.open('GET', url, true);
-            invocation.onreadystatechange = handler;
-            invocation.send(); 
+     
+    var xhr = new XMLHttpRequest(),
+    method = "GET",
+    url = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json";
+
+    xhr.open(method, url, true);
+    xhr.onreadystatechange = function () {
+        if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            console.log(xhr.responseText);
         }
-    }
+    };
     
-    callOtherDomain();
+    xhr.send();
  
 </script></html>
