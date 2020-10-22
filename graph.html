@@ -157,14 +157,16 @@
                                     <h5 class="card-header">Total Expences</h5>
                                     <div class="card-body">
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">$1,79,000</h1>
+                                            <h1 id="terapiaintensivaweek" class="mb-1"></h1>
                                         </div>
-                                        <div class="metric-label d-inline-block float-right text-secondary font-weight-bold">
-                                            <span class="icon-circle-small icon-box-xs text-danger bg-danger-light"><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">15%</span>
+                                        <div id="chart2%">
+                                            <div class="metric-label d-inline-block float-right text-secondary font-weight-bold">
+                                                <span class="icon-circle-small icon-box-xs text-danger bg-danger-light"><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">15%</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="card-body text-center bg-light p-t-40 p-b-40">
-                                        <div id="sparkline-revenue2"></div>
+                                        <div id="chart2"></div>
                                     </div>
                                     <div class="card-footer text-center bg-white">
                                         <a href="#" class="card-link">View Details</a>
@@ -539,12 +541,52 @@
                     tooltip: {
                         x: {
                             format: 'dd/MM/yy HH:mm'
+                        },
                     },
-                },
-            };
+                };
 
-            var chart = new ApexCharts(document.querySelector("#chart1"), options);
-            chart.render();
+                var chart = new ApexCharts(document.querySelector("#chart1"), options);
+                chart.render();
+
+                document.getElementById("terapiaintensivaweek").innerHTML = data_array[count - 1][k3];
+                var tmp2 = Math.round(((data_array[count - 1][k3]/data_array[count - 7][k3])*100)-100);
+                if(tmp2 > 0){
+                    document.getElementById("chart2%").innerHTML = "<div class=\"metric-label d-inline-block float-right text-success font-weight-bold\"><span class=\"icon-circle-small icon-box-xs text-success bg-success-light\"><i class=\"fa fa-fw fa-arrow-up\"></i></span><span class=\"ml-1\">".concat(tmp2, "%</span></div>");
+                }
+                else{
+                    document.getElementById("chart2%").innerHTML = "<div class=\"metric-label d-inline-block float-right text-secondary font-weight-bold\"><span class=\"icon-circle-small icon-box-xs text-danger bg-danger-light\"><i class=\"fa fa-fw fa-arrow-down\"></i></span><span class=\"ml-1\">".concat(tmp2, "%</span></div>");
+                }
+                 
+                var options = {
+                    series: [{
+                        name: 'Terapia Intensiva',
+                        data: [data_array[count - 7][k3],data_array[count - 6][k3],data_array[count - 5][k3], data_array[count - 4][k3], data_array[count - 3][k3], data_array[count - 2][k3], data_array[count - 1][k3]]
+                    }],
+                    chart: {
+                        height: 350,
+                        type: 'area'
+                    },
+                    dataLabels: {
+                        enabled: false
+                    },
+                    stroke: {
+                        curve: 'smooth'
+                    },
+                    xaxis: {
+                        type: 'datetime',
+                        categories: [data_array[count - 7][k1],data_array[count - 6][k1],data_array[count - 5][k1], data_array[count - 4][k1], data_array[count - 3][k1], data_array[count - 2][k1], data_array[count - 1][k1]]
+                    },
+                    tooltip: {
+                        x: {
+                            format: 'dd/MM/yy HH:mm'
+                        },
+                    },
+                };
+
+                var chart = new ApexCharts(document.querySelector("#chart2"), options);
+                chart.render();
+
+
             }
         }; 
         xhr.send();
