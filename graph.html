@@ -49,8 +49,10 @@
         if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
             data = JSON.parse(xhr.responseText);
             var count = Object.keys(data).length;
+            data_array = new Array(count);
             var i;
             for (i = 0; i < count; i++) {
+                data_array[i] = new Array(12);
                 data_array[i][k1] = data[i][k1];
                 data_array[i][k2] = data[i][k2];
                 data_array[i][k3] = data[i][k3];
