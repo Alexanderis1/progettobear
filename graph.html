@@ -15,21 +15,46 @@
 
 <script>
     var data = null;
+    var data_array = null;
     var xhr = new XMLHttpRequest(),
     method = "GET",
     url = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json";
-
+    
+    var k1 = "data";
+    var k2 = "ricoverati_con_sintomi";
+    var k3 = "terapia_intensiva";
+    var k4 = "totale_ospedalizzati";
+    var k5 = "isolamento_domiciliare";
+    var k6 = "totale_positivi";
+    var k7 = "variazione_totale_positivi";
+    var k8 = "nuovi_positivi";
+    var k9 = "dimessi_guariti";
+    var k10 = "deceduti";
+    var k11 = "totale_casi";
+    var k12 = "tamponi";
+    
     xhr.open(method, url, true);
     xhr.onreadystatechange = function () {
         if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
             data = JSON.parse(xhr.responseText);
             var count = Object.keys(data).length;
-            console.log(count);
-            document.getElementById("dati").innerHTML = data[0]["data"];
-            
+            var i;
+            for (i = 0; i < count; i++) {
+                data_array[i][k1] = data[i][k1];
+                data_array[i][k2] = data[i][k2];
+                data_array[i][k3] = data[i][k3];
+                data_array[i][k4] = data[i][k4];
+                data_array[i][k5] = data[i][k5];
+                data_array[i][k6] = data[i][k6];
+                data_array[i][k7] = data[i][k7];
+                data_array[i][k8] = data[i][k8];
+                data_array[i][k9] = data[i][k9];
+                data_array[i][k10] = data[i][k10];
+                data_array[i][k11] = data[i][k11];
+                data_array[i][k12] = data[i][k12];
+            }
         }
-    };
-    
+    }; 
     xhr.send();
  
 </script></html>
