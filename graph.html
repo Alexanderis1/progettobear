@@ -510,14 +510,10 @@
                 document.getElementById("nuovipositiviweek").innerHTML = data_array[count - 1][k8];
                 var tmp1 = Math.round(((data_array[count - 1][k8]/data_array[count - 7][k8])*100)-100);
                 if(tmp1 > 0){
-                    document.getElementById("chart1%").innerHTML = "<div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                                <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">" + tmp1 + "</span>
-                                            </div>"
+                    document.getElementById("chart1%").innerHTML = "<div class="metric-label d-inline-block float-right text-success font-weight-bold"><span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">" + tmp1 + "</span></div>"
                 }
                 else{
-                    document.getElementById("chart1%").innerHTML = "<div class="metric-label d-inline-block float-right text-secondary font-weight-bold">
-                                            <span class="icon-circle-small icon-box-xs text-danger bg-danger-light"><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">" + tmp1 + "</span>
-                                        </div>"
+                    document.getElementById("chart1%").innerHTML = "<div class="metric-label d-inline-block float-right text-secondary font-weight-bold"><span class="icon-circle-small icon-box-xs text-danger bg-danger-light"><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">" + tmp1 + "</span></div>"
                 }
                  
                 var options = {
