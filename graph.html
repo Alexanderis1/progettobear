@@ -24,7 +24,7 @@
         if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
             console.log(xhr.responseText);
             data = JSON.parse(xhr.responseText);
-            document.getElementById("dati").innerHTML = data[0];       
+            document.getElementById("dati").innerHTML = data[0]["data"];       
         }
     };
     
