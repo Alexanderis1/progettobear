@@ -34,9 +34,9 @@ function getJSONP(url, success) {
 }
 
 getJSONP('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json', function(data){
-    console.log(data[0]);
+    console.log(data[2]);
 
-    document.getElementById("dati").innerHTML = data[0];
+    document.getElementById("dati").innerHTML = data[2];
 
     });
 
