@@ -14,29 +14,20 @@
 </body>
 
 <script>
-
-
-function getJSONP(url, success) {
-
-    var ud = '_' + +new Date,
-        script = document.createElement('script'),
-        head = document.getElementsByTagName('head')[0] 
-               || document.documentElement;
-
-    window[ud] = function(data) {
-        head.removeChild(script);
-        success && success(data);
-    };
-
-    script.src = url.replace('callback=?', 'callback=' + ud);
-    head.appendChild(script);
-
-}
-
-getJSONP('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json', function(data){
-    console.log(data[2]);
-
-    document.getElementById("dati").innerHTML = data[2];
+    fetch("https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json", {
+            method: 'POST',
+            body: JSON.stringify(data),
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                "Accept": 'application/json',
+            }
+        })
+    .then((data) => data.json())
+    .then((resp) => console.log(resp))
+    .catch((err) => console.log(err))
+    
+    document.getElementById("dati").innerHTML = data[0];
 
     });
 
