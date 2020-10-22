@@ -56,7 +56,7 @@
             <div class="nav-left-sidebar sidebar-dark">
                 <div class="menu-list">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                        <a class="d-xl-none d-lg-none" href="#"></a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -116,8 +116,8 @@
                                     <div class="page-breadcrumb">
                                         <nav aria-label="breadcrumb">
                                             <ol class="breadcrumb">
-                                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Aggiornamento Dati Covid</a></li>
-                                                <li class="breadcrumb-item active" aria-current="page">Aggiornamento Dati Covid</li>
+                                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dati</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">Territorio Nazionale</li>
                                             </ol>
                                         </nav>
                                     </div>
@@ -136,8 +136,10 @@
                                         <div class="metric-value d-inline-block">
                                             <h1 id="nuovipositiviweek"class="mb-1"></h1>
                                         </div>
-                                        <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                            <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">25%</span>
+                                        <div id="chart1%">
+                                            <div class="metric-label d-inline-block float-right text-success font-weight-bold">
+                                                <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">25%</span>
+                                            </div>
                                         </div>
                                     </div>
                                     
@@ -506,7 +508,18 @@
                 }
 
                 document.getElementById("nuovipositiviweek").innerHTML = data_array[count - 1][k8];
-
+                var tmp1 = Math.round(((data_array[count - 1][k8]/data_array[count - 7][k8])*100)-100);
+                if(tmp1 > 0){
+                    document.getElementById("chart1%").innerHTML = "<div class="metric-label d-inline-block float-right text-success font-weight-bold">
+                                                <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">" + tmp1 + "</span>
+                                            </div>"
+                }
+                else{
+                    document.getElementById("chart1%").innerHTML = "<div class="metric-label d-inline-block float-right text-secondary font-weight-bold">
+                                            <span class="icon-circle-small icon-box-xs text-danger bg-danger-light"><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">" + tmp1 + "</span>
+                                        </div>"
+                }
+                 
                 var options = {
                     series: [{
                         name: 'Nuovi Positivi',
