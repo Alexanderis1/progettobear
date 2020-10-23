@@ -2,5 +2,12 @@
 
 Il Progetto Bear, evoluzione di Puppuservice.it, nasce come piattaforma open source customizzabile per il monitoraggio dei dati forniti dalla protezione civile sull'andamento della pandemia
 
-[Dati](https://alexanderis1.github.io/progettobear/graph.html)
+## [Link alla Piattaforma](https://alexanderis1.github.io/progettobear/graph.html)
+
+### Librerie e Templates che hanno partecipato
+
+[Bootstrap](https://getbootstrap.com/)
+[Concept](https://github.com/puikinsh/concept)
+[Protezione Civile](https://github.com/pcm-dpc/COVID-19)
+
 
