@@ -9,7 +9,7 @@ Ma potete già da ora contribuire al lavoro sul progetto [qui](https://github.co
 
 ## Obbiettivi Tier I
 
-[X] Deploy & Fetch
-[X] Basic Data Features 
-[ ] Advanced Data Features
-[ ] Embedded Platform-Panel free distribution
+- [x] Deploy & Fetch
+- [x] Basic Data Features 
+- [ ] Advanced Data Features
+- [ ] Embedded Platform-Panel free distribution
