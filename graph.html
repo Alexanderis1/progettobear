@@ -113,6 +113,7 @@
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="page-header">
                                     <h3 class="mb-2">Aggiornamento Dati Covid </h3>
+                                    <h6 class="mb-2" id="dataagg"></h6>
                                     <p class="pageheader-text"></p>
                                     <div class="page-breadcrumb">
                                         <nav aria-label="breadcrumb">
@@ -503,6 +504,8 @@
 
                 
                 }
+
+                document.getElementById("dataagg").innerHTML = data_array[count - 1][k1];
 
                 document.getElementById("nuovipositiviweek").innerHTML = data_array[count - 1][k8];
                 var tmp1 = Math.round(((data_array[count - 1][k8]/data_array[count - 7][k8])*100)-100);
