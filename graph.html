@@ -581,7 +581,7 @@
                 chart.render();
 
 
-                document.getElementById("decessiweek").innerHTML = data_array[count - 1][k10];
+                document.getElementById("decessiweek").innerHTML = data_array[count - 1][k10] - data_array[count - 2][k10];
                 var tmp3 = Math.round((((data_array[count - 1][k10] - data_array[count - 2][k10])/(data_array[count - 7][k10] - data_array[count - 8][k10]))*100)-100);
                 if(tmp3 > 0){
                     document.getElementById("chart3%").innerHTML = "<div class=\"metric-label d-inline-block float-right text-success font-weight-bold\"><span class=\"icon-circle-small icon-box-xs text-success bg-success-light\"><i class=\"fa fa-fw fa-arrow-up\"></i></span><span class=\"ml-1\">".concat(tmp3, "%</span></div>");
@@ -620,7 +620,7 @@
                 chart.render();
    
 
-                document.getElementById("guaritiweek").innerHTML = data_array[count - 1][k9];
+                document.getElementById("guaritiweek").innerHTML = data_array[count - 1][k9] - data_array[count - 2][k9];
                 var tmp4 = Math.round((((data_array[count - 1][k9] - data_array[count - 2][k9])/(data_array[count - 7][k9] - data_array[count - 8][k9]))*100)-100);
                 if(tmp4 > 0){
                     document.getElementById("chart4%").innerHTML = "<div class=\"metric-label d-inline-block float-right text-success font-weight-bold\"><span class=\"icon-circle-small icon-box-xs text-success bg-success-light\"><i class=\"fa fa-fw fa-arrow-up\"></i></span><span class=\"ml-1\">".concat(tmp4, "%</span></div>");
