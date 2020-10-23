@@ -505,7 +505,7 @@
                 
                 }
 
-                document.getElementById("dataagg").innerHTML = "Ultimo Aggiornamento: ".concat([count - 1][k1].slice(0,10));
+                document.getElementById("dataagg").innerHTML = "Ultimo Aggiornamento: ".concat(data_array[count - 1][k1].slice(0,10));
 
                 document.getElementById("nuovipositiviweek").innerHTML = data_array[count - 1][k8];
                 var tmp1 = Math.round(((data_array[count - 1][k8]/data_array[count - 7][k8])*100)-100);
