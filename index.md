@@ -6,8 +6,8 @@ Il Progetto Bear, evoluzione di Puppuservice.it, nasce come piattaforma open sou
 
 ### Librerie e Templates che hanno partecipato
 
-[Bootstrap](https://getbootstrap.com/)
-[Concept](https://github.com/puikinsh/concept)
-[Protezione Civile](https://github.com/pcm-dpc/COVID-19)
-
+ - [Bootstrap](https://getbootstrap.com/)
+ - [Concept](https://github.com/puikinsh/concept)
+ - [Protezione Civile](https://github.com/pcm-dpc/COVID-19)
+ - [ApexCharts](https://github.com/apexcharts/apexcharts.js)
 
