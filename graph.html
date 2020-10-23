@@ -148,14 +148,12 @@
                                     <div class="card-body bg-light p-t-40 p-b-40">
                                         <div id="chart1"></div>
                                     </div>
-                                    <div class="card-footer text-center bg-white">
-                                        <a href="#" class="card-link">View Details</a>
-                                    </div>
+
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
-                                    <h5 class="card-header">Terapia Intensiva</h5>
+                                    <h5 class="card-header">Attualmente in Terapia Intensiva</h5>
                                     <div class="card-body">
                                         <div class="metric-value d-inline-block">
                                             <h1 id="terapiaintensivaweek" class="mb-1"></h1>
@@ -169,9 +167,7 @@
                                     <div class="card-body text-center bg-light p-t-40 p-b-40">
                                         <div id="chart2"></div>
                                     </div>
-                                    <div class="card-footer text-center bg-white">
-                                        <a href="#" class="card-link">View Details</a>
-                                    </div>
+
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -190,9 +186,7 @@
                                     <div class="card-body bg-light p-t-40 p-b-40">
                                         <div id="chart3"></div>
                                     </div>
-                                    <div class="card-footer text-center bg-white">
-                                        <a href="#" class="card-link">View Details</a>
-                                    </div>
+
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -211,9 +205,7 @@
                                     <div class="card-body bg-light p-b-40 p-t-40">
                                         <div id="chart4"></div>
                                     </div>
-                                    <div class="card-footer text-center bg-white">
-                                        <a href="#" class="card-link">View Details</a>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -226,10 +218,28 @@
                             <!-- ============================================================== -->
                             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="card">
-                                    <h5 class="card-header">AP and AR Balance
+                                    <h5 class="card-header">Indici di Rischio
                                     </h5>
-                                    <div class="card-body">
-                                        <canvas id="chartjs_balance_bar"></canvas>
+                                    <div class="card-body row">
+                                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-6">
+                                            <div class="card">
+                                                <h5 class="card-header">Indice di contagio</h5>
+                                                <div class="card-body">
+                                                    <div class="metric-value d-inline-block">
+                                                        <h1 id="indcont" class="mb-1"></h1>
+                                                    </div>
+                                                    <div id="chart5%">
+                                                        <div class="metric-label d-inline-block float-right text-success font-weight-bold">
+                                                            <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span> <span class="ml-1">25%</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body bg-light p-b-40 p-t-40">
+                                                    <div id="chart5"></div>
+                                                </div>
+            
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -659,6 +669,45 @@
                 };
 
                 var chart = new ApexCharts(document.querySelector("#chart4"), options);
+                chart.render();
+
+
+                document.getElementById("indcont").innerHTML = Math.round(data_array[count - 1][k6]/60244639);
+                var tmp5 = Math.round((((Math.round(data_array[count - 1][k6]/60244639))/(Math.round(data_array[count - 7][k6]/60244639)))*100)-100);
+                if(tmp5 > 0){
+                    document.getElementById("chart5%").innerHTML = "<div class=\"metric-label d-inline-block float-right text-success font-weight-bold\"><span class=\"icon-circle-small icon-box-xs text-success bg-success-light\"><i class=\"fa fa-fw fa-arrow-up\"></i></span><span class=\"ml-1\">".concat(tmp5, "%</span></div>");
+                }
+                else{
+                    document.getElementById("chart5%").innerHTML = "<div class=\"metric-label d-inline-block float-right text-secondary font-weight-bold\"><span class=\"icon-circle-small icon-box-xs text-danger bg-danger-light\"><i class=\"fa fa-fw fa-arrow-down\"></i></span><span class=\"ml-1\">".concat(tmp5, "%</span></div>");
+                }
+                 
+                var options = {
+                    series: [{
+                        name: 'Indice di Contagio',
+                        data: [Math.round(data_array[count - 7][k6]/60244639),Math.round(data_array[count - 6][k6]/60244639),Math.round(data_array[count - 5][k6]/60244639), Math.round(data_array[count - 4][k6]/60244639), Math.round(data_array[count - 3][k6]/60244639), Math.round(data_array[count - 2][k6]/60244639), Math.round(data_array[count - 1][k6]/60244639)]
+                    }],
+                    chart: {
+                        height: 350,
+                        type: 'area'
+                    },
+                    dataLabels: {
+                        enabled: false
+                    },
+                    stroke: {
+                        curve: 'smooth'
+                    },
+                    xaxis: {
+                        type: 'datetime',
+                        categories: [data_array[count - 7][k1],data_array[count - 6][k1],data_array[count - 5][k1], data_array[count - 4][k1], data_array[count - 3][k1], data_array[count - 2][k1], data_array[count - 1][k1]]
+                    },
+                    tooltip: {
+                        x: {
+                            format: 'dd/MM/yy HH:mm'
+                        },
+                    },
+                };
+
+                var chart = new ApexCharts(document.querySelector("#chart5"), options);
                 chart.render();
 
             }
