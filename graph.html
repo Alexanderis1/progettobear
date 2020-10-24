@@ -672,7 +672,7 @@
                 chart.render();
 
                 document.getElementById("indcont").innerHTML = ((data_array[count - 1][k6]/60244639)*100).toFixed(3);
-                var tmp5 = (((data_array[count - 1][k6]/60244639)*100).toFixed(3))/(((data_array[count - 7][k6]/60244639)*100).toFixed(3));
+                var tmp5 = ((((data_array[count - 1][k6]/60244639)*100).toFixed(3))/(((data_array[count - 7][k6]/60244639)*100).toFixed(3))).toFixed(3);
                 if(tmp5 > 0){
                     document.getElementById("chart5%").innerHTML = "<div class=\"metric-label d-inline-block float-right text-success font-weight-bold\"><span class=\"icon-circle-small icon-box-xs text-success bg-success-light\"><i class=\"fa fa-fw fa-arrow-up\"></i></span><span class=\"ml-1\">".concat(tmp5, "%</span></div>");
                 }
