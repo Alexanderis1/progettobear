@@ -118,7 +118,7 @@
                                     <div class="page-breadcrumb">
                                         <nav aria-label="breadcrumb">
                                             <ol class="breadcrumb">
-                                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dati</a></li>
+                                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dati Settimanali</a></li>
                                                 <li class="breadcrumb-item active" aria-current="page">Territorio Nazionale</li>
                                             </ol>
                                         </nav>
@@ -223,7 +223,7 @@
                                     <div class="card-body row">
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-6">
                                             <div class="card">
-                                                <h5 class="card-header">Indice di contagio</h5>
+                                                <h5 class="card-header">Indice di attacco</h5>
                                                 <div class="card-body">
                                                     <div class="metric-value d-inline-block">
                                                         <h1 id="indcont" class="mb-1"></h1>
@@ -671,9 +671,9 @@
                 var chart = new ApexCharts(document.querySelector("#chart4"), options);
                 chart.render();
 
-
-                document.getElementById("indcont").innerHTML = Math.round(((data_array[count - 1][k6]/60244639)*100)-100);
-                var tmp5 = Math.round((((Math.round(((data_array[count - 1][k6]/60244639)*100)-100))/(Math.round(((data_array[count - 7][k6]/60244639)*100)-100)))*100)-100);
+                Math.round((num + Number.EPSILON) * 100) / 100
+                document.getElementById("indcont").innerHTML = Math.round(((((data_array[count - 1][k6]/60244639)*100)-100) + Number.EPSILON)*100)/100;
+                var tmp5 = (Math.round(((((data_array[count - 1][k6]/60244639)*100)-100) + Number.EPSILON)*100)/100)/(Math.round(((((data_array[count - 7][k6]/60244639)*100)-100) + Number.EPSILON)*100)/100);
                 if(tmp5 > 0){
                     document.getElementById("chart5%").innerHTML = "<div class=\"metric-label d-inline-block float-right text-success font-weight-bold\"><span class=\"icon-circle-small icon-box-xs text-success bg-success-light\"><i class=\"fa fa-fw fa-arrow-up\"></i></span><span class=\"ml-1\">".concat(tmp5, "%</span></div>");
                 }
@@ -684,7 +684,7 @@
                 var options = {
                     series: [{
                         name: 'Indice di Contagio',
-                        data: [Math.round(((data_array[count - 7][k6]/60244639)*100)-100),Math.round(((data_array[count - 6][k6]/60244639)*100)-100),Math.round(((data_array[count - 5][k6]/60244639)*100)-100), Math.round(((data_array[count - 4][k6]/60244639)*100)-100), Math.round(((data_array[count - 3][k6]/60244639)*100)-100), Math.round(((data_array[count - 2][k6]/60244639)*100)-100), Math.round(((data_array[count - 1][k6]/60244639)*100)-100)]
+                        data: [Math.round(((((data_array[count - 7][k6]/60244639)*100)-100) + Number.EPSILON)*100)/100,Math.round(((((data_array[count - 6][k6]/60244639)*100)-100) + Number.EPSILON)*100)/100,Math.round(((((data_array[count - 5][k6]/60244639)*100)-100) + Number.EPSILON)*100)/100, Math.round(((((data_array[count - 4][k6]/60244639)*100)-100) + Number.EPSILON)*100)/100, Math.round(((((data_array[count - 3][k6]/60244639)*100)-100) + Number.EPSILON)*100)/100, Math.round(((((data_array[count - 2][k6]/60244639)*100)-100) + Number.EPSILON)*100)/100, Math.round(((((data_array[count - 1][k6]/60244639)*100)-100) + Number.EPSILON)*100)/100]
                     }],
                     chart: {
                         height: 350,
