@@ -672,7 +672,7 @@
                 chart.render();
 
                 document.getElementById("indcont").innerHTML = ((data_array[count - 1][k6]/60244639)*100).toFixed(3).concat("%");
-                var tmp5 = (((((data_array[count - 1][k6])/60244639))/(((data_array[count - 7][k6])/60244639)))*100).toFixed(3);
+                var tmp5 = Math.Round((((((data_array[count - 1][k6])/60244639))/(((data_array[count - 7][k6])/60244639)))*100));
                 if(tmp5 > 0){
                     document.getElementById("chart5%").innerHTML = "<div class=\"metric-label d-inline-block float-right text-success font-weight-bold\"><span class=\"icon-circle-small icon-box-xs text-success bg-success-light\"><i class=\"fa fa-fw fa-arrow-up\"></i></span><span class=\"ml-1\">".concat(tmp5, "%</span></div>");
                 }
@@ -680,34 +680,8 @@
                     document.getElementById("chart5%").innerHTML = "<div class=\"metric-label d-inline-block float-right text-secondary font-weight-bold\"><span class=\"icon-circle-small icon-box-xs text-danger bg-danger-light\"><i class=\"fa fa-fw fa-arrow-down\"></i></span><span class=\"ml-1\">".concat(tmp5, "%</span></div>");
                 }
                  
-                var options = {
-                    series: [{
-                        name: 'Indice di Contagio',
-                        data: [ ((data_array[count - 7][k6]/60244639)*100).toFixed(3), ((data_array[count - 6][k6]/60244639)*100).toFixed(3) ,  ((data_array[count - 5][k6]/60244639)*100).toFixed(3), ((data_array[count - 4][k6]/60244639)*100).toFixed(3) ,  ((data_array[count - 3][k6]/60244639)*100).toFixed(3) ,  ((data_array[count - 2][k6]/60244639)*100).toFixed(3) ,  ((data_array[count - 1][k6]/60244639)*100).toFixed(3) ]
-                    }],
-                    chart: {
-                        height: 350,
-                        type: 'area'
-                    },
-                    dataLabels: {
-                        enabled: false
-                    },
-                    stroke: {
-                        curve: 'smooth'
-                    },
-                    xaxis: {
-                        type: 'datetime',
-                        categories: [data_array[count - 7][k1],data_array[count - 6][k1],data_array[count - 5][k1], data_array[count - 4][k1], data_array[count - 3][k1], data_array[count - 2][k1], data_array[count - 1][k1]]
-                    },
-                    tooltip: {
-                        x: {
-                            format: 'dd/MM/yy HH:mm'
-                        },
-                    },
-                };
+                
 
-                var chart = new ApexCharts(document.querySelector("#chart5"), options);
-                chart.render();
 
             }
         }; 
