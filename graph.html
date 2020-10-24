@@ -223,7 +223,7 @@
                                     <div class="card-body row">
                                         <div class="col-xl-3 col-lg-6 col-md-12 col-sm-12 col-12">
                                             <div class="card">
-                                                <h5 class="card-header">Indice di attacco</h5>
+                                                <h5 class="card-header">Indice di attacco (contagio) settimanale</h5>
                                                 <div class="card-body">
                                                     <div class="metric-value d-inline-block">
                                                         <h1 id="indcont" class="mb-1"></h1>
@@ -669,14 +669,8 @@
                 var chart = new ApexCharts(document.querySelector("#chart4"), options);
                 chart.render();
 
-                document.getElementById("indcont").innerHTML = ((data_array[count - 1][k8]/60244639)*100).toFixed(3).concat("%");
-                var tmp5 = Math.Round(((((data_array[count - 1][k8])/60244639)/((data_array[count - 7][k8])/60244639))*100)-100);
-                if(tmp5 > 0){
-                    document.getElementById("chart5%").innerHTML = "<div class=\"metric-label d-inline-block float-right text-success font-weight-bold\"><span class=\"icon-circle-small icon-box-xs text-success bg-success-light\"><i class=\"fa fa-fw fa-arrow-up\"></i></span><span class=\"ml-1\">".concat(tmp5, "%</span></div>");
-                }
-                else{
-                    document.getElementById("chart5%").innerHTML = "<div class=\"metric-label d-inline-block float-right text-secondary font-weight-bold\"><span class=\"icon-circle-small icon-box-xs text-danger bg-danger-light\"><i class=\"fa fa-fw fa-arrow-down\"></i></span><span class=\"ml-1\">".concat(tmp5, "%</span></div>");
-                }
+                document.getElementById("indcont").innerHTML = (((data_array[count - 1][k8] + data_array[count - 2][k8] + data_array[count - 3][k8] +  data_array[count - 4][k8] + data_array[count - 5][k8] +  data_array[count - 6][k8] + data_array[count - 7][k8]  )/60244639)*100).toFixed(3).concat("%");
+                
                  
                 
             
