@@ -13,3 +13,4 @@ Ma potete già da ora contribuire al lavoro sul progetto [qui](https://github.co
 - [x] Basic Data Features 
 - [ ] Advanced Data Features
 - [ ] Embedded Platform-Panel free distribution
+- [ ] Telegram Bot
