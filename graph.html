@@ -218,7 +218,7 @@
                             <!-- ============================================================== -->
                             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="card">
-                                    <h5 class="card-header">Tassi di Rischio
+                                    <h5 class="card-header">Tassi di Rischio Settimanali
                                     </h5>
                                     <div class="card-body row">
                                         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
@@ -243,7 +243,7 @@
                                                 <h5 class="card-header">Letalità</h5>
                                                 <div class="card-body">
                                                     <div class="metric-value d-inline-block">
-                                                        <h1 id="indcont" class="mb-1"></h1>
+                                                        <h1 id="indlet" class="mb-1"></h1>
                                                     </div>
                                                     <div id="chart6%">
                                                      
@@ -687,7 +687,7 @@
                 chart.render();
 
                 document.getElementById("indcont").innerHTML = (((data_array[count - 1][k8] + data_array[count - 2][k8] + data_array[count - 3][k8] +  data_array[count - 4][k8] + data_array[count - 5][k8] +  data_array[count - 6][k8] + data_array[count - 7][k8]  )/60244639)*100).toFixed(3).concat("%");
-                document.getElementById("indcont").innerHTML = (((data_array[count - 1][k10] + data_array[count - 2][k10] + data_array[count - 3][k10] +  data_array[count - 4][k10] + data_array[count - 5][k10] +  data_array[count - 6][k10] + data_array[count - 7][k10]  )/(data_array[count - 1][k8] + data_array[count - 2][k8] + data_array[count - 3][k8] +  data_array[count - 4][k8] + data_array[count - 5][k8] +  data_array[count - 6][k8] + data_array[count - 7][k8]))*100).toFixed(3).concat("%");
+                document.getElementById("indlet").innerHTML = (((data_array[count - 1][k10] + data_array[count - 2][k10] + data_array[count - 3][k10] +  data_array[count - 4][k10] + data_array[count - 5][k10] +  data_array[count - 6][k10] + data_array[count - 7][k10]  )/(data_array[count - 1][k8] + data_array[count - 2][k8] + data_array[count - 3][k8] +  data_array[count - 4][k8] + data_array[count - 5][k8] +  data_array[count - 6][k8] + data_array[count - 7][k8]))*100).toFixed(3).concat("%");
                  
                 
             
