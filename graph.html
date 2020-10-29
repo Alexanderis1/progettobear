@@ -687,7 +687,7 @@
                 chart.render();
 
                 document.getElementById("indcont").innerHTML = (((data_array[count - 1][k8] + data_array[count - 2][k8] + data_array[count - 3][k8] +  data_array[count - 4][k8] + data_array[count - 5][k8] +  data_array[count - 6][k8] + data_array[count - 7][k8]  )/60244639)*100).toFixed(3).concat("%");
-                document.getElementById("indlet").innerHTML = (((data_array[count - 1][k10] + data_array[count - 2][k10] + data_array[count - 3][k10] +  data_array[count - 4][k10] + data_array[count - 5][k10] +  data_array[count - 6][k10] + data_array[count - 7][k10]  )/(data_array[count - 1][k8] + data_array[count - 2][k8] + data_array[count - 3][k8] +  data_array[count - 4][k8] + data_array[count - 5][k8] +  data_array[count - 6][k8] + data_array[count - 7][k8]))*100).toFixed(3).concat("%");
+                document.getElementById("indlet").innerHTML = (((data_array[count - 1][k10] - data_array[count - 8][k10]  )/(data_array[count - 1][k8] + data_array[count - 2][k8] + data_array[count - 3][k8] +  data_array[count - 4][k8] + data_array[count - 5][k8] +  data_array[count - 6][k8] + data_array[count - 7][k8]))*100).toFixed(3).concat("%");
                  
                 
             
